@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :ＩＤ %><br>
-    <%= f.text_field :userid %>
+    <%= f.text_field :userid, :maxlength => 5 %>
   </div>
   <div class="field">
     <%= f.label :名前 %><br>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :パスワード %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password, :maxlength => 8 %>
   </div>
   <div class="actions">
     <%= submit_tag "　登録　" %>
