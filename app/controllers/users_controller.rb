@@ -61,6 +61,13 @@
     end
   end
 
+  def search
+    @users = User.where("username like '%#{params["search"]["username"]}%'")
+    @word = params["search"]["username"] 
+    render :index
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

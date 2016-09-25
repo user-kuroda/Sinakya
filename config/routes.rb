@@ -1,11 +1,14 @@
-Rails.application.routes.draw do
+﻿Rails.application.routes.draw do
   resources :users
-  resources :categories
   resources :tasks
+  resources :categories
   resources :tasks do   
     post 'search', on: :collection 
   end 
   resources :users do 
+    post 'search', on: :collection 
+  end 
+  resources :categories do   
     post 'search', on: :collection 
   end 
   # The priority is based upon order of creation: first created -> highest priority.
