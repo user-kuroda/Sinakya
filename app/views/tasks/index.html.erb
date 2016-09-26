@@ -26,7 +26,13 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.done %></td>
-        <td><%= task.due_date %></td>
+        <td>
+	<% if task.done == false && Date.today >= task.due_date %>
+          <font color = "red"><%= task.due_date %></font>
+	<% else %>
+           <%= task.due_date %>
+	<% end %>
+	</td>
         <td><%= task.category.categoryname %></td>
         <td><%= task.name %></td>
         <td><%= task.user.username %></td>
